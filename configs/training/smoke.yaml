@@ -1,0 +1,16 @@
+# Two tiny iterations on CPU to exercise the pipeline. NOT a research setting.
+model:
+  message_dim: 16
+  gru_hidden: 16
+  hidden: 32
+  attention_heads: 2
+  n_quantiles: 8
+  credibility_hidden: 16
+train:
+  total_steps: 120
+  n_envs: 2
+  rollout_length: 30
+  ppo_epochs: 2
+  minibatches: 2
+  curriculum: [0.0, 0.5, 0.5]
+  device: cpu

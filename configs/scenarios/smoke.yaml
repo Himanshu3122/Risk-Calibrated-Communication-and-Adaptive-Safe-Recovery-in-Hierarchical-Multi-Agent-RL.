@@ -1,0 +1,6 @@
+scenarios:
+  n_maps: 40
+  n_train: 24
+  n_val: 8
+  n_test: 8
+  base_seed: 12345

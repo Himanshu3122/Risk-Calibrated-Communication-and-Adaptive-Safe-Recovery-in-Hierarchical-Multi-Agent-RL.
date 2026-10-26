@@ -1,0 +1,7 @@
+# 6,000 maps split 4,200 / 600 / 1,200 by seed (paper Sec. VI-B).
+scenarios:
+  n_maps: 6000
+  n_train: 4200
+  n_val: 600
+  n_test: 1200
+  base_seed: 12345

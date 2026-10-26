@@ -1,0 +1,25 @@
+# Paper Table III. c_val, c_c, c_r are not reported in the paper (assumption A7).
+model:
+  message_dim: 32
+  gru_hidden: 128
+  hidden: 128
+  attention_heads: 4
+  n_quantiles: 16
+train:
+  total_steps: 10000000
+  n_envs: 32
+  rollout_length: 400
+  actor_lr: 0.0005
+  critic_lr: 0.001
+  lagrange_lr: 0.005
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip: 0.2
+  ppo_epochs: 10
+  minibatches: 4
+  entropy_coef: 0.01
+  beta_kl_max: 0.05
+  cvar_alpha: 0.9
+  cost_budget: 0.5
+  curriculum: [0.2, 0.4, 0.4]
+  device: cpu
