@@ -1,0 +1,15 @@
+# Tiny HierFire for CPU smoke tests. NOT the paper setting.
+env:
+  height: 16
+  width: 16
+  region_rows: 2
+  region_cols: 2
+  crews_per_region: 3
+  n_drops: 2
+  coordinator_period: 5
+  episode_length: 30
+  assets_min: 3
+  assets_max: 5
+  ignitions_min: 1
+  ignitions_max: 2
+  patch_radius: 2

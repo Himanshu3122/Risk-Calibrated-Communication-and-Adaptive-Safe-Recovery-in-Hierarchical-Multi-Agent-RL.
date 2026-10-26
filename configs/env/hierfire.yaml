@@ -1,0 +1,19 @@
+# HierFire as specified in paper Sec. VI-A (48x48 grid, 8 regions of 12x24, 3 crews each,
+# 6 aerial drops every K=5 steps, 400-step episodes, 12-20 assets).
+env:
+  height: 48
+  width: 48
+  region_rows: 4
+  region_cols: 2
+  crews_per_region: 3
+  n_drops: 6
+  coordinator_period: 5
+  episode_length: 400
+  assets_min: 12
+  assets_max: 20
+  ignitions_min: 2
+  ignitions_max: 4
+  entrapment_threshold: 0.6
+  drop_radius: 1
+  drop_latency: 2
+  patch_radius: 2
