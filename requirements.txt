@@ -1,0 +1,6 @@
+# Exact versions used for the validation in SMOKE_TEST_REPORT.md (Python 3.12, CPU).
+# Install torch from the CPU index: pip install --index-url https://download.pytorch.org/whl/cpu torch==2.5.1
+numpy==2.2.6
+scipy==1.18.1
+torch==2.5.1
+PyYAML==6.0.3
