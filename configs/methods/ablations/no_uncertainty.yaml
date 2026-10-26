@@ -1,0 +1,3 @@
+# Table VII: w/o uncertainty (point estimate, rho_lower = rho_bar).
+name: ricor_no_uncertainty
+uncertainty: false

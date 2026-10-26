@@ -1,0 +1,12 @@
+# Evaluation protocol of the reduced-budget study (30 test maps per condition and seed).
+eval:
+  conditions: [clean, F1, F2, F3, F4, F5, F6, C1, C2, C3, U1, U2, U3, U4, K1, K4]
+  episodes_per_condition: 30
+  loss_sweep: [0.0, 0.2, 0.4, 0.6]
+  recovery_condition: C2
+  recovery_window: [50, 120]
+  recovery_episodes: 30
+  recovery_smoothing: 10
+  ece_bins: 15
+  bootstrap_samples: 10000
+  split: test

@@ -1,0 +1,9 @@
+# Reference lower bound (added in revision): every received report and goal is discarded, so
+# regions act on local observations only and the coordinator allocates without reports.
+# Shield on, as in RiCoR, so the bound isolates the value of communication.
+name: no_comm
+gating: false
+no_comm: true
+modes: none
+verify_mode: false
+shield: true

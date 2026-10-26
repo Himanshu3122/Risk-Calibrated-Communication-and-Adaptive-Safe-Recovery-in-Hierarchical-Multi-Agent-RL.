@@ -1,0 +1,11 @@
+# Beta-reputation message weighting (added in revision; requested by Reviewer 3): a non-learned,
+# BRS/TRAVOS-style trust model with decayed Beta evidence per link, outcomes judged from observable
+# consistency (wind agreement, bounded step-to-step change). Gate as in Eq. 8 with kappa = 0;
+# no modes, no shield, so it is directly comparable with ADMAC-H.
+name: beta_rep
+gating: true
+reputation: true
+kappa: 0.0
+modes: none
+verify_mode: false
+shield: false

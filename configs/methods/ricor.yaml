@@ -1,0 +1,15 @@
+# Full RiCoR (paper Sec. IV-V, Table III values).
+name: ricor
+gating: true
+split_reliability: true
+uncertainty: true
+lambda_u: 1.0
+kappa: 1.0
+tau0: 0.5
+gate_temperature: 0.1
+modes: learned
+verify_mode: true
+shield: true
+hysteresis: 5
+switch_cost: 0.05
+query_cost: 0.02

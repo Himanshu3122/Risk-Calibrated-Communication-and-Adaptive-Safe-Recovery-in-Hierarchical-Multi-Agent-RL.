@@ -1,0 +1,9 @@
+# Minimal CPU workload that exercises every stage of the pipeline in about a minute.
+include:
+  - ../env/hierfire_smoke.yaml
+  - ../scenarios/smoke.yaml
+  - ../training/smoke.yaml
+  - ../evaluation/smoke.yaml
+name: smoke
+seed: 0
+output_dir: runs

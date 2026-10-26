@@ -1,0 +1,8 @@
+# HPSF approximation: recurrent prediction of missing reports + one-step safety filter
+# (stands in for the predictive safety filter of Sun et al. 2026; assumption A18).
+name: hpsf
+gating: false
+predict_missing: true
+modes: none
+verify_mode: false
+shield: true

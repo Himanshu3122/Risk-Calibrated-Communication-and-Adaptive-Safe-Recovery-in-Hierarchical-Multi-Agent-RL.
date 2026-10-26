@@ -1,0 +1,9 @@
+# Full research configuration (paper settings). Expect hundreds of CPU/GPU hours per method.
+include:
+  - ../env/hierfire.yaml
+  - ../scenarios/paper.yaml
+  - ../training/full.yaml
+  - ../evaluation/full.yaml
+name: full
+seed: 0
+output_dir: runs

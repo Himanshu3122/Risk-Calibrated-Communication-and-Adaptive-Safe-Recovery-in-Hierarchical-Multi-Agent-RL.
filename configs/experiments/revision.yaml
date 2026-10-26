@@ -1,0 +1,19 @@
+# Reduced-budget study actually run for the revised manuscript (CPU laptop, see docs/reproducibility.md).
+# Paper geometry and Table III hyperparameters are kept; what is reduced is the episode length
+# (200 instead of 400 steps), the number of parallel environments (16 instead of 32), the training
+# budget (2e5 instead of 1e7 environment steps), the number of seeds (3 per
+# configuration instead of 8), and the number of test episodes (30 per condition and seed instead of 1,200).
+include:
+  - ../env/hierfire.yaml
+  - ../scenarios/paper.yaml
+  - ../training/full.yaml
+  - ../evaluation/revision.yaml
+name: revision
+seed: 0
+output_dir: runs
+env:
+  episode_length: 200
+train:
+  total_steps: 200000
+  n_envs: 16
+  rollout_length: 200

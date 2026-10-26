@@ -1,0 +1,9 @@
+# Reference upper bound (added in revision): messages are gated by their TRUE reliability label
+# (fresh and unaltered), with the one-step shield and no modes. Privileged by design; not a method.
+name: oracle_gate
+gating: true
+oracle_gate: true
+kappa: 0.0
+modes: none
+verify_mode: false
+shield: true

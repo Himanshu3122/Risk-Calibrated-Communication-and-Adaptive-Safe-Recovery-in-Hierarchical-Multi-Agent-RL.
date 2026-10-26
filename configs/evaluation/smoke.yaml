@@ -1,0 +1,10 @@
+eval:
+  conditions: [clean, F1, F2, F3, F4, F5, F6, C1, C2, C3, U1, U2, U3]
+  episodes_per_condition: 2
+  loss_sweep: [0.0, 0.3]
+  recovery_condition: C2
+  recovery_window: [10, 18]
+  recovery_episodes: 2
+  recovery_smoothing: 4
+  bootstrap_samples: 200
+  split: test

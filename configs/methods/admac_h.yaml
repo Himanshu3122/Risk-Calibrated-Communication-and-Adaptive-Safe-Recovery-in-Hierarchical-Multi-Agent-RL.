@@ -1,0 +1,10 @@
+# ADMAC-H approximation: one learned reliability score per message, no channel/content split,
+# no uncertainty, no risk term, no modes, no shield (assumption A17).
+name: admac_h
+gating: true
+split_reliability: false
+uncertainty: false
+kappa: 0.0
+modes: none
+verify_mode: false
+shield: false

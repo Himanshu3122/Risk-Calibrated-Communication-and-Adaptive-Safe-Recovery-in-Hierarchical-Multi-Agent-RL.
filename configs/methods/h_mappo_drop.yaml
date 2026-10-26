@@ -1,0 +1,9 @@
+# H-MAPPO+Drop: message dropout (Kim et al. 2019) and noise during training, same curriculum.
+# Dropout rate and noise scale are not reported in the paper (assumption A16).
+name: h_mappo_drop
+gating: false
+modes: none
+verify_mode: false
+shield: false
+message_dropout: 0.2
+message_noise: 0.05

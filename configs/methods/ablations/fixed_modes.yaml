@@ -1,0 +1,3 @@
+# Table VI/VII: Ours-fixed (fixed-threshold switching instead of the learned selector).
+name: ricor_fixed
+modes: fixed

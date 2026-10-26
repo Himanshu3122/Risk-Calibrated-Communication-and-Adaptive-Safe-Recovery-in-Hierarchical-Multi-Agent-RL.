@@ -1,0 +1,7 @@
+# H-MAPPO: two-level MAPPO with attention communication, trained on clean communication.
+name: h_mappo
+gating: false
+modes: none
+verify_mode: false
+shield: false
+train_with_faults: false
