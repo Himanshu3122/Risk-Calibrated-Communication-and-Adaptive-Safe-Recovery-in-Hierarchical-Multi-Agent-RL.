@@ -12,11 +12,13 @@ Official research implementation of *"Risk-Calibrated Communication and Adaptive
 
 > [!IMPORTANT]
 > **Study Status & Empirical Findings (Revised Manuscript):**
+>
 > - The initial submission contained illustrative planning targets rather than measured values. The revised manuscript reports only empirical measurements obtained using this codebase in a **reduced-budget study** (`configs/experiments/revision.yaml`: $2 \times 10^5$ environment steps per run, 200-step episodes, 3 seeds per method, bound, and ablation, with 30 evaluation episodes per condition and seed).
 > - **Empirical Outcome:** In the reduced-budget regime, RiCoR did **not** outperform established baselines. It exhibited the lowest Asset Protection Rate (APR) across condition groups, HPSF proved the strongest overall method, no pairwise differences survived Holm step-down correction, and RiCoR's learned mode selector converged to degenerate modes in two of the three seeds. See Section 7 of the revised manuscript and `../results/`.
 > - The compute-intensive paper-scale study (`configs/experiments/full.yaml`: $10^7$ steps, 8 seeds) has **not** been run due to CPU rollout constraints (~40+ CPU-hours per method-seed).
 >
 > **Key Revision Updates (2026-10-25):**
+>
 > - **Privileged Information Removed from Execution:** The coordinator's risk assessment relies strictly on a decentralized critic evaluated over actually received reports, verification replies use neighbors' local border-view observations, and credibility features use exclusively the receiver's inbox (`tests/integration/test_system.py::test_execution_never_reads_the_global_state`).
 > - **Methodological Corrections:** Evaluated the Eq. (7) tail risk term under the induced action distribution, added discounted cost-critic targets, implemented per-region drop-target knowledge, restricted latency metrics to decision-only steps, enabled causal recovery smoothing, reported FAR/FRR at the operational gate threshold, and added $\text{CVaR}_{0.9}$ cost tracking.
 > - **Expanded Evaluation Suite:** Added baseline `beta_rep` (Beta-reputation), performance bounds `oracle_gate` and `no_comm`, slow-drift adversary `U4`, and compromised-fraction sweeps `K1` and `K4`.
@@ -119,7 +121,7 @@ flowchart TD
 All algorithms, mathematical formulations, and experimental frameworks map directly to code modules:
 
 | Paper Component | Formulation / Spec | Implementation Files | Primary Classes / Methods |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Evidential Reliability** | Eqs. (4)–(6) | [`src/ricor/core/reliability.py`](src/ricor/core/reliability.py), [`src/ricor/models.py`](src/ricor/models.py) | `evidential_beta()`, `factorized_reliability()`, `ChannelEstimator`, `CredibilityNet` |
 | **Risk-Conditioned Gate** | Eqs. (7)–(9) | [`src/ricor/core/gate.py`](src/ricor/core/gate.py), [`src/ricor/system.py`](src/ricor/system.py), [`src/ricor/models.py`](src/ricor/models.py) | `risk_conditioned_gate()`, `RiCoRSystem._sensitivity()`, `GatedAttention` |
 | **Four-Mode Safe Recovery** | Eq. (10) | [`src/ricor/core/modes.py`](src/ricor/core/modes.py), [`src/ricor/system.py`](src/ricor/system.py) | `ModeSelector`, `apply_recovery_mode()`, `RiCoRSystem._apply_mode()` |
@@ -207,6 +209,7 @@ Component implementation status: [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATU
 ### Standard Setup (pip)
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/Himanshu3122/Risk-Calibrated-Communication-and-Adaptive-Safe-Recovery-in-Hierarchical-Multi-Agent-RL..git
    cd Risk-Calibrated-Communication-and-Adaptive-Safe-Recovery-in-Hierarchical-Multi-Agent-RL.
@@ -214,23 +217,29 @@ Component implementation status: [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATU
 
 2. **Create and activate a virtual environment:**
    - **Linux / macOS:**
+
      ```bash
      python -m venv .venv
      source .venv/bin/activate
      ```
+
    - **Windows (PowerShell):**
+
      ```powershell
      python -m venv .venv
      .venv\Scripts\Activate.ps1
      ```
 
 3. **Install PyTorch (CPU wheel):**
+
    ```bash
    pip install --index-url https://download.pytorch.org/whl/cpu torch==2.5.1
    ```
+
    *(For CUDA builds, select your specific driver wheel from [pytorch.org](https://pytorch.org/get-started/locally/)).*
 
 4. **Install package dependencies and package in editable mode:**
+
    ```bash
    pip install -r requirements-dev.txt
    pip install --no-deps -e .
@@ -405,21 +414,25 @@ Linting and formatting standards follow `ruff` configurations defined in `pyproj
 
 - **`ModuleNotFoundError: No module named 'ricor'`:**
   Ensure the package is installed in editable mode:
+
   ```bash
   pip install --no-deps -e .
   ```
+
   Alternatively, run with Python's path set explicitly:
   - Linux/macOS: `PYTHONPATH=src pytest`
   - Windows PowerShell: `$env:PYTHONPATH="src"; pytest`
 
 - **Unsupported Python Version (e.g., Python 3.14 or 3.15):**
   PyTorch currently does not publish prebuilt wheels for Python 3.14+. Provision an environment with Python 3.10–3.13:
+
   ```bash
   uv venv --python 3.12 .venv
   ```
 
 - **OpenMP Thread Contention / CPU Overload:**
   By default, PyTorch may saturate all available CPU cores. Restrict thread allocation using:
+
   ```bash
   export OMP_NUM_THREADS=2      # Windows PowerShell: $env:OMP_NUM_THREADS="2"
   ```
@@ -441,7 +454,6 @@ If you use this codebase or reference the empirical findings, please cite:
   author  = {Himanshu},
   journal = {arXiv preprint},
   year    = {2026},
-  note    = {Research implementation and reduced-budget empirical evaluation}
 }
 ```
 
