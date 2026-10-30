@@ -452,7 +452,7 @@ If you use this codebase or reference the empirical findings, please cite:
 @article{ricor2026,
   title   = {Risk-Calibrated Communication and Adaptive Safe Recovery in Hierarchical Multi-Agent Reinforcement Learning under Compound Communication Failures},
   author  = {Himanshu},
-  journal = {mdpi preprint},
+  journal = {arXiv preprint},
   year    = {2026},
 }
 ```
